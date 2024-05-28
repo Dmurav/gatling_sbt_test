@@ -72,7 +72,7 @@ lazy val root = (project in file("."))
 name := "demo"
 
 scalaVersion := "2.13.13"
-
+scalacOptions ++= Seq("encoding", "utf-8")
 libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % "3.11.2" % "test"
 libraryDependencies += "io.gatling"            % "gatling-test-framework"    % "3.11.2" % "test"
 libraryDependencies += "io.gatling"            % "gatling-recorder"          % "3.11.2" % "test"
