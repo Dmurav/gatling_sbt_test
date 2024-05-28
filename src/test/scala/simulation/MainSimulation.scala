@@ -15,8 +15,8 @@ class MainSimulation extends LoadGenParams {
 
   lazy val scn: ScenarioBuilder = scenario("computerDatabase")
     .randomSwitch(possibilities =
-      75.0 -> feed(Feeders.comSearchDBFeeder).exec(users),
-      25.0 -> feed(Feeders.comSearchDBFeeder).exec(admins))
+      75.0 -> feed(Feeders.comSearchFeeder).exec(users),
+      25.0 -> feed(Feeders.comSearchFeeder).exec(admins))
 
   load(scn, Protocols.computerDatabaseHttpProtocol)
 
