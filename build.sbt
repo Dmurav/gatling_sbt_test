@@ -12,7 +12,7 @@ lazy val root = (project in file("."))
     inThisBuild(
       List(
         organization := "dima.test.example",
-        scalaVersion := "2.13.13",
+        scalaVersion := "2.13.12",
         version := "0.0.1"
       )),
     name := "load-test",
@@ -71,8 +71,21 @@ lazy val root = (project in file("."))
 
 name := "demo"
 
-scalaVersion := "2.13.13"
-scalacOptions ++= Seq("encoding", "utf-8")
+scalaVersion := "2.13.12"
+
+javaOptions := overrideDefaultJavaOptions("-Xms1024m", "-Xmx6144m", "-XX:-HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/dev/null", "-Dfile.encoding=UTF-8")
+
+scalacOptions := Seq(
+  "-encoding",
+  "UTF-8",
+  "-target:jvm-1.8",
+  "-deprecation",
+  "-feature",
+  "-unchecked",
+  "-language:implicitConversions",
+  "-language:postfixOps"
+)
+
 libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % "3.11.2" % "test"
 libraryDependencies += "io.gatling"            % "gatling-test-framework"    % "3.11.2" % "test"
 libraryDependencies += "io.gatling"            % "gatling-recorder"          % "3.11.2" % "test"
