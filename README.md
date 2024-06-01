@@ -7,6 +7,12 @@
 - simulation.conf for test parameters
 - GatlingRunner - tool for debug, you can use different simulations, default - Debug
 
+## Metrics (base statistics)
+- Graphite to Telegraf 
+- Telegraf use plugin socket_listener
+- Telegraf send metrics to InfluxDB2 
+- Grafana use datasource InfluxDB2 и Flux language
+
 ## Build tool:
 - sbt
 - 
